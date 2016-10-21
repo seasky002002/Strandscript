@@ -4,10 +4,10 @@
 # Installation
 1. Requirements: Perl
 Install Perl and add /bin directory to your executable path.
-
 Perl: https://www.perl.org/
 
 2. Install Strandscript
+```
 unzip Strandscript.zip       #Unzip the file
 cd Strandscript/             #Change directories into the folder
 chmod 755 bin/*.pl           #Change the mode of executable files
@@ -15,6 +15,7 @@ chmod 755 bin/*.pl           #Change the mode of executable files
 \#Add Strandscript to Shell searching path ($PATH). This step is optional.
 \#If your NRSA is installed at /home/usrname/NRSA
 export PATH=/home/usrname/NRSA/bin/:$PATH
+```
 
 3. Download fasta files of reference genome
 Please download the fasta files for genome hg19, GRCh38, mm9, and mm10 from http://hgdownload.cse.ucsc.edu/downloads.html. Uncompress and save as hg19.fa/GRCh38.fa/mm9.fa/mm10.fa into folder /fasta under Strandscript.
