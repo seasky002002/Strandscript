@@ -1,7 +1,7 @@
-# Introduction
+## Introduction
 aaaaaaaaaa
 
-# Installation
+## Installation
 * Requirements: Perl
 
 ```
@@ -23,9 +23,13 @@ export PATH=/home/usrname/NRSA/bin/:$PATH
 ```
 
 * Download fasta files of reference genome
+
+```
 Please download the fasta files for genome hg19, GRCh38, mm9, and mm10 from http://hgdownload.cse.ucsc.edu/downloads.html. Uncompress and save as hg19.fa/GRCh38.fa/mm9.fa/mm10.fa into folder /fasta under Strandscript.
+```
 
 * Install required perl packages
+```
 #Check whether all the packages needed are installed by running test.modules,
 ./bin/test.modules
 
@@ -44,9 +48,10 @@ Users can install missing packages by running "./bin/install.modules packagename
 #Add the NRSA lib to your PERL5LIB environment variable,
 #If your NRSA is installed at /home/usrname/NRSA
 export PERL5LIB=$PERL5LIB:/home/usrname/NRSA/lib/
+```
 
-Usage
-Step1: Illumina manifest file checking (input: manifest file)
+## Usage
+**Step1: Illumina manifest file checking (input: manifest file)**
 Usage: perl step1-mismatch.pl [options] -in manifest.csv
 e.g: perl ./bin/step1-mismatch.pl -o test/ -n test1 -g hg19 -in OncoChip.csv
 options:
