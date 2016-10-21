@@ -4,10 +4,10 @@ aaaaaaaaaa
 ## Installation
 * Requirements: Perl
 
-```
+
 Install Perl and add /bin directory to your executable path.
 Perl: (https://www.perl.org/)
-```
+
 
 
 * Install Strandscript:
