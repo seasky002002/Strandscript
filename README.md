@@ -11,8 +11,8 @@ unzip Strandscript.zip       #Unzip the file
 cd Strandscript/             #Change directories into the folder
 chmod 755 bin/*.pl           #Change the mode of executable files
 
-#Add Strandscript to Shell searching path ($PATH). This step is optional.
-#If your NRSA is installed at /home/usrname/NRSA
+\#Add Strandscript to Shell searching path ($PATH). This step is optional.
+\#If your NRSA is installed at /home/usrname/NRSA
 export PATH=/home/usrname/NRSA/bin/:$PATH
 
 3. Download fasta files of reference genome
