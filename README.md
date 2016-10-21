@@ -6,7 +6,7 @@ aaaaaaaaaa
 
 ```
 Install Perl and add /bin directory to your executable path.
-Perl: https://www.perl.org/
+Perl: (https://www.perl.org/)
 ```
 
 
@@ -25,7 +25,7 @@ export PATH=/home/usrname/NRSA/bin/:$PATH
 * Download fasta files of reference genome
 
 ```
-Please download the fasta files for genome hg19, GRCh38, mm9, and mm10 from http://hgdownload.cse.ucsc.edu/downloads.html. 
+Please download the fasta files for genome hg19, GRCh38, mm9, and mm10 from (http://hgdownload.cse.ucsc.edu/downloads.html). 
 Uncompress and save as hg19.fa/GRCh38.fa/mm9.fa/mm10.fa into folder /fasta under /Strandscript.
 ```
 
