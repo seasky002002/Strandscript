@@ -3,10 +3,13 @@
 
 # Installation
 1. Requirements: Perl
+```
 Install Perl and add /bin directory to your executable path.
 Perl: https://www.perl.org/
+```
 
 2. Install Strandscript
+
 ```
 unzip Strandscript.zip       #Unzip the file
 cd Strandscript/             #Change directories into the folder
