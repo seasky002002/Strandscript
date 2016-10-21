@@ -1,21 +1,23 @@
-# Strandscript
-Introduction
+# Introduction
 ….
 
-Installation
+# Installation
 1. Requirements: Perl
 Install Perl and add /bin directory to your executable path.
 Perl: https://www.perl.org/
-2. Install ***
-unzip ***.zip       #Unzip the file
-cd ***/             #Change directories into the folder
-chmod 755 bin/*.pl   #Change the mode of executable files
 
-#Add *** scripts to Shell searching path ($PATH). This step is optional.
+2. Install Strandscript
+unzip Strandscript.zip       #Unzip the file
+cd Strandscript/             #Change directories into the folder
+chmod 755 bin/*.pl           #Change the mode of executable files
+
+#Add Strandscript to Shell searching path ($PATH). This step is optional.
 #If your NRSA is installed at /home/usrname/NRSA
 export PATH=/home/usrname/NRSA/bin/:$PATH
+
 3. Download fasta files of reference genome
-Please download the fasta files for genome hg19, GRCh38, mm9, and mm10 from http://hgdownload.cse.ucsc.edu/downloads.html. Uncompress and save as hg19.fa/GRCh38.fa/mm9.fa/mm10.fa into folder /fasta under ***.
+Please download the fasta files for genome hg19, GRCh38, mm9, and mm10 from http://hgdownload.cse.ucsc.edu/downloads.html. Uncompress and save as hg19.fa/GRCh38.fa/mm9.fa/mm10.fa into folder /fasta under Strandscript.
+
 4. Install required perl packages
 #Check whether all the packages needed are installed by running test.modules,
 ./bin/test.modules
@@ -45,8 +47,8 @@ options:
 -o [string]             output directory (default: current directory)
 -in [string]            required, input manifest file in csv format
 -n [string]             name for output
--h                          this help message
-If you have added *** scripts to Shell searching path ($PATH), please use the command "step1-mismatch.pl -o test/ -n test1 -g hg19 -in OncoChip.csv" instead.
+-h                      this help message
+If you have added strandscript to Shell searching path ($PATH), please use the command "step1-mismatch.pl -o test/ -n test1 -g hg19 -in OncoChip.csv" instead.
 
 Step2: Strand flip for plink file (input: ped & map)
 Usage: perl step2-flip.pl [options] -in new_manifest.csv -map plink.map -ped plin.ped -o work_dir/
@@ -60,5 +62,5 @@ options:
                                mismatch<cutoff (default: 0.2)
 -h                           this help message
 
-If you have added *** scripts to Shell searching path ($PATH), please use the command "step2-flip.pl -o test/ -in new_OncoChip.csv -map OncoChip.map -ped OncoChip.map -c 0.2" instead.
+If you have added Strandscript to Shell searching path ($PATH), please use the command "step2-flip.pl -o test/ -in new_OncoChip.csv -map OncoChip.map -ped OncoChip.map -c 0.2" instead.
 
