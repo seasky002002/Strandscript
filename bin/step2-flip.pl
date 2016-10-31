@@ -70,7 +70,7 @@ sub _check{
     	_usage(1);
     }else{
     	if ( !-e $ped_file ) {
-            _error("input ped file (-in) '$ped_file' does not exists.\n");
+            _error("input ped file (-ped) '$ped_file' does not exists.\n");
             _usage(1);
       }
       $ped_file = abs_path($ped_file);
@@ -82,7 +82,7 @@ sub _check{
     	_usage(1);
     }else{
     	if ( !-e $map_file ) {
-            _error("input map file (-in) '$map_file' does not exists.\n");
+            _error("input map file (-map) '$map_file' does not exists.\n");
             _usage(1);
       }
       $map_file = abs_path($map_file);
