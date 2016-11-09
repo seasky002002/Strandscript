@@ -87,5 +87,5 @@ If you have added Strandscript to Shell searching path ($PATH), please use the c
 
 Step2 outputs three files into the output directory. In the e.g., there would be three files (flipped_OncoChip.map,  flipped_OncoChip.ped & filtered-out-snp.txt) in test/ folder.  
 
-&nbsp;&nbsp;&nbsp;&nbsp;flipped_OncoChip.map & flipped_OncoChip.ped: flipped plink files.
+&nbsp;&nbsp;&nbsp;&nbsp;flipped_OncoChip.map & flipped_OncoChip.ped: flipped plink files.  
 &nbsp;&nbsp;&nbsp;&nbsp;filtered-out-snp.txt: lists the flitered out snps which mismatch > cutoff.
