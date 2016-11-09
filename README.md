@@ -56,15 +56,18 @@ export PERL5LIB=$PERL5LIB:/home/usrname/NRSA/lib/
 **Step1: Illumina manifest file checking (input: manifest file)**
 ```
 Usage: perl step1-mismatch.pl [options] -in manifest.csv
-e.g: perl ./bin/step1-mismatch.pl -o test/ -n test1 -g hg19 -in OncoChip.csv
+e.g: perl ./bin/step1-mismatch.pl -o test/ -n OncoChip -g hg19 -in OncoChip.csv
 options:
 -g [string]             define the genome: GRCh38, hg19, mm9, or mm10 (default: hg19)
 -o [string]             output directory (default: current directory)
 -in [string]            required, input manifest file in csv format
 -n [string]             name for output
 -h                      this help message
-If you have added strandscript to Shell searching path ($PATH), please use the command "step1-mismatch.pl -o test/ -n test1 -g hg19 -in OncoChip.csv" instead.
+If you have added strandscript to Shell searching path ($PATH), please use the command "step1-mismatch.pl -o test/ -n OncoChip -g hg19 -in OncoChip.csv" instead.
 ```
+Step1 outputs two files into the output directory. In the e.g., there would be two files (new_OncoChip.csv & outdated_OncoChip.csv) in test/ folder.
+
+
 
 **Step2: Strand flip for plink file (input: ped & map)**
 ```
@@ -72,12 +75,13 @@ Usage: perl step2-flip.pl [options] -in new_manifest.csv -map plink.map -ped pli
 e.g: perl ./bin/step2-flip.pl -o test/ -in new_OncoChip.csv -map OncoChip.map -ped OncoChip.map -c 0.2
 options:
 -in [string]               required, input new manifest file in csv format from step1
--map [string]           required, plink map file for flipping
--ped [string]            required, plink ped file for flipping
--o [string]               output directory (default: current directory)
--c [real]                  cutoff for mismatch percentage of Probe sequence, SNPs would be flipped which
-                               mismatch<cutoff (default: 0.2)
--h                           this help message
+-map [string]              required, plink map file for flipping
+-ped [string]              required, plink ped file for flipping
+-o [string]                output directory (default: current directory)
+-c [real]                  cutoff for mismatch percentage of Probe sequence, SNPs would be flipped which mismatch<cutoff (default: 0.2)
+-h                         this help message
 
 If you have added Strandscript to Shell searching path ($PATH), please use the command "step2-flip.pl -o test/ -in new_OncoChip.csv -map OncoChip.map -ped OncoChip.map -c 0.2" instead.
 ```
+
+Step2 outputs three files into the output directory. In the e.g., there would be three files (flipped_OncoChip.map,  flipped_OncoChip.ped & filtered-out-snp.txt) in test/ folder.
