@@ -190,6 +190,7 @@ sub _main{
   close IN1;
   
   
+  my $outstrf="";
   my $outstr1="";
   my $n=0;
   my %order;
@@ -199,11 +200,12 @@ sub _main{
     my @temp=split(/\s+/,$_);
     if(exists $type{$temp[1]}){
     	$outstr1.=$_."\n";
-    }
-#    }elsif(($temp[0] eq "0") or ($temp[0] eq "XY")){
+    }elsif(($temp[0] eq "0") or ($temp[0] eq "XY")){
 #    	$outstr1.=$_."\n";
 #    	$type{$temp[1]}="0XY";
-#    }
+    }else{
+   	  $outstrf.=$_."\n";    
+    }
     
     $order{$n}=$temp[1];
     $n++;
@@ -249,6 +251,11 @@ sub _main{
   open OUT2, "> $out_ped";
   print OUT2 $outstr2;
   close OUT2;
+  
+  my $out_filter=$out_dir."filtered-out-snp.txt";
+  open OUT3, "> $out_filter";
+  print OUT3 $outstrf;
+  close OUT3;
 }
   
 sub complement {

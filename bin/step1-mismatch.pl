@@ -15,7 +15,7 @@ my $in_csv=undef;
 my $genome="hg19";
 my $fasta=$dir."\/fasta\/hg19.fa";
 my $out_dir="./"; #default: current_dir
-my $out_name="snp"; # default: snp.csv & failed_snp.csv
+my $out_name="manifest"; # default: new_manifest.csv & outdated_manifest.csv
 my $help=0;
 
 
@@ -104,7 +104,7 @@ sub _usage{
     my ($flag) = @_;
     my $usage=<<USAGE;
 Usage: perl code_step1_sw.pl [options] -in manifest.csv
-e.g: perl code_step1_sw.pl -o test/ -n test1 -g hg19 -in OncoChip.csv 
+e.g: perl code_step1_sw.pl -o test/ -n OncoChip -g hg19 -in OncoChip.csv 
 options:
 -g [string]             define the genome: GRCh38, hg19, mm9, or mm10 (default: hg19)
 -o [string]             output directory (default: current directory)
@@ -549,7 +549,7 @@ sub _main{
   print OUT1 $outstr;
   close OUT1;
 
-  my $out_fcsv=$out_dir."failed_".$out_name."\.csv";
+  my $out_fcsv=$out_dir."outdated_".$out_name."\.csv";
   open OUT2, "> $out_fcsv";
   print OUT2 $failed_str;
   close OUT2;
