@@ -66,7 +66,7 @@ options:
 If you have added strandscript to Shell searching path ($PATH), please use the command "step1-mismatch.pl -o test/ -n OncoChip -g hg19 -in OncoChip.csv" instead.
 ```
 Step1 outputs two files into the output directory. In the e.g., there would be two files (new_OncoChip.csv & outdated_OncoChip.csv) in test/ folder.  
-&nbsp;&nbsp;&nbsp;&nbsp;new_OncoChip.csv: lists the basic information and mismathed number of base pairs for snps. This file would be provided as input for the step2.
+&nbsp;&nbsp;&nbsp;&nbsp;new_OncoChip.csv: lists the basic information and mismathed number of base pairs for snps. This file would be provided as input for the step2.  
 &nbsp;&nbsp;&nbsp;&nbsp;outdated_OncoChip.csv: lists the outdated snps.
 
 
@@ -85,7 +85,7 @@ options:
 If you have added Strandscript to Shell searching path ($PATH), please use the command "step2-flip.pl -o test/ -in new_OncoChip.csv -map OncoChip.map -ped OncoChip.map -c 0.2" instead.
 ```
 
-Step2 outputs three files into the output directory. In the e.g., there would be three files (flipped_OncoChip.map,  flipped_OncoChip.ped & filtered-out-snp.txt) in test/ folder.
+Step2 outputs three files into the output directory. In the e.g., there would be three files (flipped_OncoChip.map,  flipped_OncoChip.ped & filtered-out-snp.txt) in test/ folder.  
 
 &nbsp;&nbsp;&nbsp;&nbsp;flipped_OncoChip.map & flipped_OncoChip.ped: flipped plink files.
 &nbsp;&nbsp;&nbsp;&nbsp;filtered-out-snp.txt: lists the flitered out snps which mismatch > cutoff.
