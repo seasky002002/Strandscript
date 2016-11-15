@@ -73,7 +73,7 @@ Step1 outputs two files into the output directory. In the e.g., there would be t
 **Step2: Strand flip for plink file (input: ped & map)**
 ```
 Usage: perl step2-flip.pl [options] -in new_manifest.csv -map plink.map -ped plin.ped -o work_dir/
-e.g: perl ./bin/step2-flip.pl -o test/ -in new_HumanExome.csv -map example/HumanExome.map -ped example/HumanExome.ped -c 0.2
+e.g: perl ./bin/step2-flip.pl -o test/ -in test/new_HumanExome.csv -map example/HumanExome.map -ped example/HumanExome.ped -c 0.2
 options:
 -in [string]               required, input new manifest file in csv format from step1
 -map [string]              required, plink map file for flipping
@@ -82,7 +82,7 @@ options:
 -c [real]                  cutoff for mismatch percentage of Probe sequence, SNPs would be flipped which mismatch<cutoff (default: 0.2)
 -h                         this help message
 
-If you have added Strandscript to Shell searching path ($PATH), please use the command "step2-flip.pl -o test/ -in new_HumanExome.csv -map HumanExome.map -ped HumanExome.ped -c 0.2" instead.
+If you have added Strandscript to Shell searching path ($PATH), please use the command "step2-flip.pl -o test/ -in test/new_HumanExome.csv -map example/HumanExome.map -ped example/HumanExome.ped -c 0.2" instead.
 ```
 
 Step2 outputs three files into the output directory. In the e.g., there would be three files (flipped_HumanExome.map,  flipped_HumanExome.ped & filtered-out-snp.txt) in test/ folder.  
