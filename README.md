@@ -56,24 +56,24 @@ export PERL5LIB=$PERL5LIB:/home/usrname/NRSA/lib/
 **Step1: Illumina manifest file checking (input: manifest file)**
 ```
 Usage: perl step1-mismatch.pl [options] -in manifest.csv
-e.g: perl ./bin/step1-mismatch.pl -o test/ -n OncoChip -g hg19 -in OncoChip.csv
+e.g: perl ./bin/step1-mismatch.pl -o test/ -n HumanExome -g hg19 -in example/HumanExome.csv
 options:
 -g [string]             define the genome: GRCh38, hg19, mm9, or mm10 (default: hg19)
 -o [string]             output directory (default: current directory)
 -in [string]            required, input manifest file in csv format
 -n [string]             name for output
 -h                      this help message
-If you have added strandscript to Shell searching path ($PATH), please use the command "step1-mismatch.pl -o test/ -n OncoChip -g hg19 -in OncoChip.csv" instead.
+If you have added strandscript to Shell searching path ($PATH), please use the command "step1-mismatch.pl -o test/ -n HumanExome -g hg19 -in example/HumanExome.csv" instead.
 ```
-Step1 outputs two files into the output directory. In the e.g., there would be two files (new_OncoChip.csv & outdated_OncoChip.csv) in test/ folder.  
-&nbsp;&nbsp;&nbsp;&nbsp;new_OncoChip.csv: lists the basic information and mismathed number of base pairs for snps. This file would be provided as input for the step2.  
-&nbsp;&nbsp;&nbsp;&nbsp;outdated_OncoChip.csv: lists the outdated snps.
+Step1 outputs two files into the output directory. In the e.g., there would be two files (new_HumanExome.csv & outdated_HumanExome.csv) in test/ folder.  
+&nbsp;&nbsp;&nbsp;&nbsp;new_HumanExome.csv: lists the basic information and mismathed number of base pairs for snps. This file would be provided as input for the step2.  
+&nbsp;&nbsp;&nbsp;&nbsp;outdated_HumanExome.csv: lists the outdated snps.
 
 
 **Step2: Strand flip for plink file (input: ped & map)**
 ```
 Usage: perl step2-flip.pl [options] -in new_manifest.csv -map plink.map -ped plin.ped -o work_dir/
-e.g: perl ./bin/step2-flip.pl -o test/ -in new_OncoChip.csv -map OncoChip.map -ped OncoChip.map -c 0.2
+e.g: perl ./bin/step2-flip.pl -o test/ -in new_HumanExome.csv -map example/HumanExome.map -ped example/HumanExome.ped -c 0.2
 options:
 -in [string]               required, input new manifest file in csv format from step1
 -map [string]              required, plink map file for flipping
@@ -82,10 +82,10 @@ options:
 -c [real]                  cutoff for mismatch percentage of Probe sequence, SNPs would be flipped which mismatch<cutoff (default: 0.2)
 -h                         this help message
 
-If you have added Strandscript to Shell searching path ($PATH), please use the command "step2-flip.pl -o test/ -in new_OncoChip.csv -map OncoChip.map -ped OncoChip.map -c 0.2" instead.
+If you have added Strandscript to Shell searching path ($PATH), please use the command "step2-flip.pl -o test/ -in new_HumanExome.csv -map HumanExome.map -ped HumanExome.ped -c 0.2" instead.
 ```
 
-Step2 outputs three files into the output directory. In the e.g., there would be three files (flipped_OncoChip.map,  flipped_OncoChip.ped & filtered-out-snp.txt) in test/ folder.  
+Step2 outputs three files into the output directory. In the e.g., there would be three files (flipped_HumanExome.map,  flipped_HumanExome.ped & filtered-out-snp.txt) in test/ folder.  
 
-&nbsp;&nbsp;&nbsp;&nbsp;flipped_OncoChip.map & flipped_OncoChip.ped: flipped plink files.  
+&nbsp;&nbsp;&nbsp;&nbsp;flipped_HumanExome.map & flipped_HumanExome.ped: flipped plink files.  
 &nbsp;&nbsp;&nbsp;&nbsp;filtered-out-snp.txt: lists the flitered out snps which mismatch > cutoff.
