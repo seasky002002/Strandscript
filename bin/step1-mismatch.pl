@@ -140,11 +140,20 @@ sub _main{
         $seq{$n_chr}=uc($str);
         $len{$n_chr}=length($str);
       }
-      my $lenflag=index($_,"\s");
-      if($_=~/chr/){
-        $n_chr=substr($_,4,($lenflag-4));
+      
+      if ($_ =~ /\s+/) {
+        my $lenflag=$-[0];
+        if($_=~/chr/){
+          $n_chr=substr($_,4,($lenflag-4));
+        }else{
+          $n_chr=substr($_,1,($lenflag-4));
+        }
       }else{
-        $n_chr=substr($_,1,($lenflag-4));
+        if($_=~/chr/){
+          $n_chr=substr($_,4);
+        }else{
+          $n_chr=substr($_,1);
+        }
       }
       $str="";
       next;
