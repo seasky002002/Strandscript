@@ -143,13 +143,13 @@ sub _main{
       
       if ($_ =~ /\s+/) {
         my $lenflag=$-[0];
-        if($_=~/chr/){
+        if($_=~/\>chr/){
           $n_chr=substr($_,4,($lenflag-4));
         }else{
-          $n_chr=substr($_,1,($lenflag-4));
+          $n_chr=substr($_,1,($lenflag-1));
         }
       }else{
-        if($_=~/chr/){
+        if($_=~/\>chr/){
           $n_chr=substr($_,4);
         }else{
           $n_chr=substr($_,1);
