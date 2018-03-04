@@ -20,8 +20,8 @@ cd Strandscript/             #Change directories into the folder
 chmod 755 bin/*.pl           #Change the mode of executable files
 
 #Add Strandscript to Shell searching path ($PATH). This step is optional.
-#If your NRSA is installed at /home/usrname/NRSA
-export PATH=/home/usrname/NRSA/bin/:$PATH
+#If your Strandscript is installed at /home/usrname/Strandscript
+export PATH=/home/usrname/Strandscript/bin/:$PATH
 ```
 
 * Download fasta files of reference genome
@@ -47,9 +47,9 @@ Users can install missing packages by running "./bin/install.modules packagename
 #e.g  
 ./bin/install.modules Getopt::Long
   
-#Add the NRSA lib to your PERL5LIB environment variable,
-#If your NRSA is installed at /home/usrname/NRSA
-export PERL5LIB=$PERL5LIB:/home/usrname/NRSA/lib/
+#Add the Strandscript lib to your PERL5LIB environment variable,
+#If your Strandscript is installed at /home/usrname/Strandscript
+export PERL5LIB=$PERL5LIB:/home/usrname/Strandscript/lib/lib/
 ```
 
 ## Usage
